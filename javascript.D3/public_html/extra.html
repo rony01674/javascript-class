@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ascending Order Shorting</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var x = new Array(5, 10, 20, 18, 16, 6, 3, 2, 100);
+            document.write(x);
+            document.write("<hr/>");
+            var lengthArray = x.length;
+            document.write(lengthArray);
+            document.write("<hr/>");
+            x.sort();
+            x.sort(function (a, b) {
+                return a - b
+            });
+            document.write(x);
+            document.write("<hr/>");
+
+            var tree = ["A", "B", "D", "C"];
+            var bigTree = tree.join();
+            tree.join("2");
+            document.write(bigTree);
+            document.write("<hr/>");
+
+            var x = ["A", "B", "C", "D", "E"];
+            x.slice(2, 4);
+            document.write(x.slice(2,4));
+            document.write("<hr/>");
+            
+            
+
+        </script>
+    </body>
+</html>
