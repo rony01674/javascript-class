@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Else If structure</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var puppy = prompt("What kind of pup would you like?","");
+            var puppyLC = puppy.toLowerCase();
+            if (puppyLC == "greater swiss mountain dog"){
+                alert(" Yes we have Swissies!");
+            }
+            else if (puppyLC == "great dane"){
+                alert(" Yes we have those big wonderful Great Danes!");
+            }
+            else if (puppyLC == " irish wolfhound"){
+                alert(" Yes we have the Gentle Giants!");
+            }
+            else{
+                alert(" Sorry we only have giant dogs.");
+                puppy = " information where to find that breed";
+            }
+            var message = "<p>Come get your<b>"+puppy;
+            message +="</b> at <h3>Goliath\'s Breeders</h3>";
+            document.write(message);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

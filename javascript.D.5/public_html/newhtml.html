@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Using Function and While Loop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var sum = 0;
+            var sn = 10;
+            var en = 1;
+            function makeSum(sn, en) {
+                while (sn >= en) {
+                    sum += sn;
+                    sn--;
+                }
+                return sum;
+            }
+            alert(makeSum(sn, en));
+        </script>
+    </head>
+    <body>
+        <h1>Sum 10 to 1 by using Function and While Loop</h1>
+    </body>
+</html>
