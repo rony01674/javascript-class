@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var sn = 1;
+            var en = 100;
+            function printLoop(sn, en) {
+                for (sn; sn <= en; sn++) {
+                    if (sn % 5 == 0) {
+                        continue;
+                    } else {
+                        if (sn % 50 == 0) {
+                            sn += 500;
+                        }
+                        document.write(sn + "<br/>");
+                    }
+                }
+            }
+            printLoop(sn, en);
+        </script>
+    </body>
+</html>
