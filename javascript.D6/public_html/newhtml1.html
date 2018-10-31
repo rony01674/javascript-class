@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            outer:
+                    for (i = 1; i <= 10, i++){
+                for (j = 10; j >= 1; j--) {
+                    if (j == 5) {
+                        continue outer;
+                    }
+                    document.write(i + "<br/>" + j);
+                }
+            }
+        </script>
+    </body>
+</html>

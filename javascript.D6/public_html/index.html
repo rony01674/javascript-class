@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Print 1 to 10 except 7 by using For Loop.</h1>
+        <script>
+            var sn = parseInt(prompt("Enter Starting Number", ""));
+            var en = parseInt(prompt("Enter Ending Number", ""));
+            function makeLoop(sn, en) {
+                for (sn; sn <= en; sn++) {
+                    if (sn == 7) {
+                        continue;
+                    }
+                    document.write(sn + "<br/>");
+                }
+
+            }
+
+            alert(makeLoop(sn, en));
+
+
+        </script>
+    </body>
+</html>
