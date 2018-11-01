@@ -1,0 +1,26 @@
+/* 
+    Created on : Nov 1, 2018, 5:54:44 PM
+    Author     : User
+*/
+
+h3{
+    color: #c6d699;
+    background-color: #8d6ba8;
+    font-family: verdana;
+    font-size: 16pt;
+}
+.bod{
+    color: #731224;
+    font-family: verdana;
+    font-size: 11pt;
+    font-weight: bold;
+}
+a:link{
+    color: #731224;
+    background-color: #c6d699;
+}
+h2{
+    color: #8d6ba8;
+    background-color: #c6d699;
+    font-size: 14pt;
+}
