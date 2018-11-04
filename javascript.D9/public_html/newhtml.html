@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Both methods accept a second parameter as the starting position for the search:</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>The indexOf() method accepts a second parameter as the starting position for the search:</p>
+        <p id="demo"></p>
+
+        <script>
+            var str = "Please locate where 'locate' occurs!";
+            var pos = str.indexOf("locate", 15);
+            document.getElementById("demo").innerHTML = pos;
+        </script>
+    </body>
+</html>
