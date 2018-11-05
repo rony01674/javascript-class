@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Info Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                font-family: verdana;
+            }
+        </style>
+    </head>
+    <body bgcolor="#828793">
+        <h3>Data</h3>
+        <form>
+            <input type="text"/>One<br/>
+            <input type="text"/>Two<br/>
+            <input type="text"/>Three
+            <input type="button" value="Change Something" onclick="reply()"/>
+        </form>
+        
+        <script>
+            function reply() {
+                var hi = new String();
+                hi = parent.frames[0].name;
+                parent.header.document.forms[0].element[0].value = "Hello, " + hi.toUpperCase() + "!";
+                var menName = parent.frames[1].name;
+                document.forms[0].element[1].value = menName;
+            }
+        </script>
+    </body>
+</html>

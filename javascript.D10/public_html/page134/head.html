@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Header</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                font-family: verdana;
+            }
+        </style>
+    </head>
+    <body bgcolor="#ee9caa">
+        <h3>Header</h3>
+        <input type="text"/>
+        <input type="button" value="Redecorate" onclick="message()"/>
+        
+        <script>
+            function message (){
+                parent.data.document.forms[0].element[0].value = "Greetings";
+            }
+        </script>
+    </body>
+</html>

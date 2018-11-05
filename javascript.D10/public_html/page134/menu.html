@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Le Menu</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                font-family: verdana;
+            }
+        </style>
+    </head>
+    <body bgcolor="#ef001b">
+        <h3>Menu</h3>
+        <form>
+            <input type="button" value="Send Two!" onclick="changeThem()"/>
+        </form>
+        
+        <script>
+            function changeThem (){
+                parent.data.document.forms[0].element[2].value = "Hi form Menu";
+                parent.header.document.forms[0].element[1].value = "Hello";
+            }
+        </script>
+    </body>
+</html>
