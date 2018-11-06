@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forward</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body bgcolor="lightgreen">
+        <h3>Remember this page!</h3>
+        <p>
+            First double-click the top button. that will take you to another site<br/>
+            When you return to this page, click the bottom button.
+        </p>
+        <form>
+            Double-click this button first:
+            <input type="button" value="Two Clicks Here" ondblclick="doubleUp()"/>
+            <p>
+                When you return click this button.
+                <input type="button" value="Go Forward" onclick="forwardTo()"/>
+            </p>
+        </form>
+        
+        <script>
+            function doubleUp(){
+                window.location="backPage.html";
+            }
+            function forwardTo(){
+                var alpha = history.forward();
+            }
+        </script>
+    </body>
+</html>

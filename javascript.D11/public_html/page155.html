@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Anchors and Hashes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                background-color: #d9e6cc;
+                font-family: verdana;
+            }
+            h2{
+                font-size: 24pt;
+                color: #ff0040;
+            }
+            h3{
+                font-size: 16pt;
+                color: #008080;
+            }
+            a{
+                color: #e68026;
+                font-size: 10pt;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body onload="countAnchors()">
+        
+        
+        <script>
+            function countAnchors(){
+                alert("This Script has "+document.anchors.length+"anchors.");
+            }
+            function goAnchors(anchName){
+                location.hash =anchName;
+            }
+        </script>
+    </body>
+</html>
