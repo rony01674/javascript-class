@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Driver</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="hidden.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="fontDriver">
+            <p>Click one of the buttons below</p>
+        </div>
+        <form name="direction">
+            <input type="button" value="<=Left" onClick="goLeft()"/>
+            <input type="button" value="Right=>" onClick="goRight()"/>
+        </form>
+        
+        <script>
+            function goLeft(){
+                var left = parent.info.document.position.hereL.value;
+                parent.info.location = left;
+            }
+            function goRight(){
+                var right = parent.info.document.position.hereR.value;
+                parent.info.location = right;
+            }
+        </script>
+    </body>
+</html>

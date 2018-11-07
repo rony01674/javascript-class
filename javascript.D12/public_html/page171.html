@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variable Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body bgcolor="BedFed">
+        <form name="stateBird">
+            <input type="text" name="state"/> : State Name<br/>
+            <input type="text" name="bird"/> : Name of State Bird
+            <p><input type="button" value="Bird Button" onclick="putBird()"/></p>
+        </form>
+        
+        <script>
+            function putBird(){
+                var state = "New Mexico";
+                document.stateBird.state.value = state;
+                var bird = "Roadrunner";
+                document.stateBird.bird.value = bird;
+            }
+        </script>
+    </body>
+</html>

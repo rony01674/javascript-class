@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form name="folks" onSubmit="return CheckItOut(this)">
+            <p>Your Name Please :</p>
+            <input type="text" name="info"/>
+            <input type="submit" value="Click to Validate and Submit"/>
+
+        </form>
+
+        <script>
+            function CheckItOut(form) {
+                var yourName = document.folks.info.value;
+                if (yourName == "") {
+                    alert("You know your name don\'t you?\n So type it in!");
+                    return false;
+                } else {
+                    alert("Thanks, " + yourName + " for sending your name.");
+                    return false;
+                }
+        </script>
+    </body>
+</html>

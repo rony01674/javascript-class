@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Check boxes and Radio Buttons</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                font-family: verdana;
+                font-size: 11pt;
+                background-color: #33ff66;
+                font-weight: bold;
+            }
+            .fStyle{
+                color: #595959;
+                background-color: #b3ffcc;
+            }
+        </style>
+    </head>
+    <body onLoad="document.hardware.reset()">
+        <form name="hardware">
+            
+        </form>
+        
+        <script>
+            function sortItOut(form){
+                var display = "Key Feature and Components \n\n";
+                var reviewer = new Object();
+                reviewer = document.hardware;
+                for (var counter = 0; counter < reviewer.length; counter++){
+                    if(reviewer.elements[counter].checked){
+                        display += reviewer.elements[counter].value+"\n";
+                    }
+                }
+                reviewer.showTime.value = display;
+            }
+        </script>
+    </body>
+</html>
