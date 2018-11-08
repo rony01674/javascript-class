@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Setting the Expiration Date</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                background-color:  rbg(200,198,159);
+                font-family: verdana;
+                font-size: 11pt;
+            }
+            #display{
+                color: rbg(169,33,53);
+                background-color: rbg(249,225,203);
+            }
+        </style>
+    </head>
+    <body onload="document.baker.reset()">
+        <div id="display">&nbsp;
+            <form name="baker">
+                &nbsp;<input type="text" name="myCookie"/><br/>&nbsp;
+                <p>Type in the value for your cookie and</p> 
+            </form>
+        </div>
+        
+        <script>
+            function yourCokie(name) {
+                var remain = new Data("November 30, 2018");
+                document.cookie = escape(name + document.baker.myCookie.value) + "";
+                expires = ("" + remain.toGMTString() + ";");
+            }
+            function welcomeBack() {
+                var seeMe = unescape(document.cookie);
+                var tagIt = seeMe.indexOf(";");
+                seeMe = seeMe.substring(11, tagIt);
+                alert("Hello there, " + seeMe);
+            }
+        </script>
+    </body>
+</html>
