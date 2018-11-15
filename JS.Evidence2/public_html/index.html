@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            label{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="myForm">
+            ID : <input type="number" name="idb"/><label id="idb">
+            </label><br/>
+            Name : <input type="text" name="fname"/><label id="fname">
+            </label><br/>
+            Email : <input type="text" name="email"/><label id="email">
+            </label><br/>
+            Gender : <input type="radio" name="gender" value="Male"/>Male 
+            <input type="radio" name="gender" value="Female"/>Female <label id="gender">
+            </label><br/>
+            Round : <select name="round">
+                <option value="Select A Round" selected="selected">Select A Round</option>
+                <option value="Round 36">Round 36</option>
+                <option value="Round 37">Round 37</option>
+                <option value="Round 38">Round 38</option>
+                <option value="Round 39">Round 39</option>
+            </select>
+            <label id="round"></label><br/>
+            <input type="reset" value="Reset"/>
+        </form>
+        <button type="submit" onclick="validateForm()">Display</button>
+
+        <!--Script-->
+
+        <script>
+            var win;
+            function validateForm() {
+                //for id
+                var idb = document.forms.myForm.idb.value;
+                if (idb == "") {
+                    document.getElementById("idb").innerHTML = "Enter Your ID";
+                    return false;
+                } else if (idb.length < 7) {
+                    document.getElementById("idb").innerHTML = "ID Length At Least 7 Characters";
+                    return false;
+                } else {
+                    document.getElementById("idb").innerHTML = "";
+                }
+
+                //for name
+                var fname = document.forms.myForm.fname.value;
+                if (fname == "") {
+                    document.getElementById("fname").innerHTML = "Enter Your Name";
+                    return false;
+                } else if (fname.length < 3) {
+                    document.getElementById("fname").innerHTML = "Name Length At Least 3 Characters";
+                    return false;
+                } else {
+                    document.getElementById("fname").innerHTML = "";
+                }
+
+                //for email
+                var email = document.forms.myForm.email.value;
+                var atpos = email.indexOf("@");
+                var dotpos = email.lastIndexOf(".");
+                if (email == "") {
+                    document.getElementById("email").innerHTML = "Enter Your Email";
+                    return false;
+                } else {
+                    document.getElementById("email").innerHTML = "";
+                }
+
+                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+                    document.getElementById("email").innerHTML = "Not a valid e-mail address";
+                    return false;
+                } else {
+                    document.getElementById("email").innerHTML = "";
+                }
+
+                //for gender
+                var gender = document.forms.myForm.gender.value;
+                if (gender == "") {
+                    document.getElementById("gender").innerHTML = "Select Your Gender";
+                    return false;
+                } else {
+                    document.getElementById("gender").innerHTML = "";
+                }
+
+                //for round
+                var round = document.forms.myForm.round.value;
+                if (round == "Select A Round") {
+                    document.getElementById("round").innerHTML = "Select Your Round";
+                    return false;
+                } else {
+                    document.getElementById("round").innerHTML = "";
+                }
+
+                //for new window
+                win = window.open("", "", "width=400");
+                win.document.write("<h2><center>Form Output</center></h2>");
+                win.document.write("ID : " + idb + "<br/>");
+                win.document.write("Name : " + fname + "<br/>");
+                win.document.write("Email : " + email + "<br/>");
+                win.document.write("Gender : " + gender + "<br/>");
+                win.document.write("Round : " + round + "<br/>");
+            }
+        </script>
+    </body>
+</html>
