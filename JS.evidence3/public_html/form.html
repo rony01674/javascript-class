@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            label{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="myForm">
+            ID : <input type="number" name="idb"/><label id="idb"></label><br/>
+            Name : <input type="text" name="fname"/><label id="fname"></label><br/>
+            Email : <input type="text" name="email"/><label id="email"></label><br/>
+            Gender : <input type="radio" name="gender" value="Male"/>Male
+            <input type="radio" name="gender" value="Female"/>Female
+            <label id="gender"></label><br/>
+            Education : <input type="checkbox" name="ssc" value="SSC"/>SSC
+            <input type="checkbox" name="hsc" value="HSC"/>HSC
+            <label id="education"></label><br/>
+            Round : <select name="round">
+                <option value="Select A Round" selected="selected">Select A Round</option>
+                <option>Round 36</option>
+                <option>Round 37</option>
+                <option>Round 38</option>
+                <option>Round 39</option>
+            </select>
+            <label id="round"></label><br/>
+            <textarea rows="5" cols="15" placeholder="Enter At Least 10 Characters" name="msg"></textarea> 
+            <label id="msg"></label><br/>
+            <input type="reset" value="Reset"/>
+        </form>
+        <button onclick="validateForm()">Submit</button>
+
+        <script>
+            var win;
+
+            function validateForm() {
+                //for id
+                var idb = document.forms.myForm.idb.value;
+                if (idb == "") {
+                    document.getElementById("idb").innerHTML = "Enter Your ID";
+                    return false;
+                } else if (idb.length < 7) {
+                    document.getElementById("idb").innerHTML = "ID Length At Least 7 Characters";
+                    return false;
+                } else {
+                    document.getElementById("idb").innerHTML = "";
+                }
+
+                //for name 
+                var fname = document.forms.myForm.fname.value;
+                if (fname == "") {
+                    document.getElementById("fname").innerHTML = "Enter Your Name";
+                    return false;
+                } else if (fname.length < 3) {
+                    document.getElementById("fname").innerHTML = "Name Length At Least 3 Characters";
+                    return false;
+                } else {
+                    document.getElementById("fname").innerHTML = "";
+                }
+
+                //for email
+                var email = document.forms.myForm.email.value;
+                var atpos = email.indexOf("@");
+                var dotpos = email.lastIndexOf(".");
+                if (email == "") {
+                    document.getElementById("email").innerHTML = "Enter Your Email";
+                    return false;
+                } else {
+                    document.getElementById("email").innerHTML = "";
+                }
+                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+                    document.getElementById("email").innerHTML = "Not A Valid e-mail Address";
+                    return false;
+                } else {
+                    document.getElementById("email").innerHTML = "";
+                }
+
+                //for gender
+                var gender = document.forms.myForm.gender.value;
+                if (gender == "") {
+                    document.getElementById("gender").innerHTML = "Select Your Gender";
+                    return false;
+                } else {
+                    document.getElementById("gender").innerHTML = "";
+                }
+
+                //for education
+                var education = "";
+                if (document.forms.myForm.ssc.checked) {
+                    education += document.forms.myForm.ssc.value;
+                }
+                if (document.forms.myForm.hsc.checked) {
+                    education += document.forms.myForm.hsc.value;
+                }
+                if (!document.forms.myForm.ssc.checked && !document.forms.myForm.hsc.checked) {
+                    document.getElementById("education").innerHTML = "Select Your Education";
+                    return false;
+                } else {
+                    document.getElementById("education").innerHTML = "";
+                }
+
+                //for round
+                var round = document.forms.myForm.round.value;
+                if (round == "Select A Round") {
+                    document.getElementById("round").innerHTML = "Select Your Round";
+                    return false;
+                } else {
+                    document.getElementById("round").innerHTML = "";
+                }
+
+                //for comment
+                var msg = document.forms.myForm.msg.value;
+                if (msg == "") {
+                    document.getElementById("msg").innerHTML = "Write Some Comment";
+                    return false;
+                } else if (msg.length < 10) {
+                    document.getElementById("msg").innerHTML = "Comment At Least 10 Characters";
+                    return false;
+                }else{
+                    document.getElementById("msg").innerHTML = "";
+                }
+
+
+                //for new window
+                win = window.open("", "", "width=400")
+                win.document.write("ID : " + idb + "<br/>");
+                win.document.write("Name : " + fname + "<br/>");
+                win.document.write("Email : " + email + "<br/>");
+                win.document.write("Gender : " + gender + "<br/>");
+                win.document.write("Education : " + education + "<br/>");
+                win.document.write("Round : " + round + "<br/>");
+                win.document.write("Comment : " + msg + "<br/>");
+            }
+        </script>
+    </body>
+</html>
